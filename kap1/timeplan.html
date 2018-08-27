@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeplan</title>
+    <style>
+
+        table, td , th{
+            border: solid black 2px;
+            border-collapse: collapse;
+            empty-cells: hide;
+            text-align: center;
+        }
+
+        td, th {
+            width: 200px;
+        }
+
+        .Matte-1T {
+            background-color: deepskyblue;
+        }
+
+        .IT1 {
+            background-color: deeppink;
+        }
+
+        .IT2 {
+            background-color: lawngreen;
+        }
+
+        .FM {
+            background-color: orangered;
+        }
+
+        .midttime {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<h2>Min timeplan</h2>
+<table>
+    <thead>
+        <tr>
+            <th>time</th>
+            <th>Mandag</th>
+            <th>Tirsdag</th>
+            <th>Onsdag</th>
+            <th>Torsdag</th>
+            <th>Fredag</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td rowspan="2" class="FM">Matematikk <br>forberedende</td>
+            <td rowspan="2" class="IT1">Informasjonsteknologi 1</td>
+            <td rowspan="2"></td>
+            <td rowspan="4"></td>
+            <td class="IT1">Informasjonsteknologi 1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td rowspan="3"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td rowspan="2"></td>
+            <td rowspan="2" class="Matte-1T">Matte 1T</td>
+            <td rowspan="2" class="IT2">Informasjonsteknologi 2</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td colspan="6" class="midttime">Midttime</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td rowspan="4"></td>
+            <td rowspan="2"></td>
+            <td></td>
+            <td rowspan="2" class="IT1">Informasjonsteknologi 1</td>
+            <td rowspan="1" class="IT1">Informasjonsteknologi 1</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td rowspan="2" class="FM">Matematikk <br>forberedende</td>
+            <td class="Matte-1T">Matte 1T</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td rowspan="2" class="IT2">Informasjonsteknologi 2</td>
+            <td rowspan="2" class="Matte-1T">Matte 1T</td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
