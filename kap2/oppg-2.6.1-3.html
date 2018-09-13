@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgaver 2.6.1-3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Verdana, sans-serif;
+        }
+
+        label {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        input:focus {
+            outline: #00aced 2px solid;
+        }
+
+        input[type=text]{
+            display: block;
+            padding: 5px 2px;
+            font-size: 1em;
+        }
+
+        input[type=text]:focus{
+            background-color: lightblue;
+        }
+
+        input[type=number]{
+            display: block;
+            padding: 5px 2px;
+            font-size: 1em;
+        }
+
+        input[type=number]:focus{
+            background-color: lightgreen;
+        }
+
+        input[type=checkbox]:checked{
+            outline: #28bf3f 3px solid;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: #00aced;
+        }
+
+        button:active {
+            background-color: lightskyblue;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            width: 200px;
+            border: black solid 4px;
+        }
+
+        li {
+            padding: 5px 10px;
+            background-color: #00aced;
+        }
+
+        li:nth-child(odd){
+            background-color: #28bf3f;
+        }
+
+        .knapper {
+            display: inline-block;
+            text-align: center;
+            font-weight: bolder;
+            width: 250px;
+            border: 2px solid darkblue;
+            background-color: #00aced;
+            color: darkblue;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+
+        .knapper:hover {
+            background-color: lightskyblue;
+        }
+
+
+
+        #valgt {
+            background-color: lightblue;
+            padding: 12px 0;
+        }
+    </style>
+</head>
+<body>
+<a href="../index.html">Tilbake...</a><br>
+<h3>Skjema</h3>
+<form action="">
+    <label for="inpNavn">Navn</label><input id="inpNavn" type="text">
+    <label for="inpTlf">Tlf</label><input id="inpTlf" type="number">
+    <input id="inpCola" type="checkbox"><label for="inpCola">Cola</label>
+    <input id="inpFanta" type="checkbox"><label for="inpFanta">Fanta</label>
+    <input id="inpSprite" type="checkbox"><label for="inpSprite">Sprite</label><br>
+<button>Send inn</button>
+</form>
+
+<h3>Liste</h3>
+<ul>
+    <li>Stockholm</li>
+    <li>Malmö</li>
+    <li>Göteborg</li>
+    <li>Karlstad</li>
+    <li>Uppsala</li>
+    <li>Umeå</li>
+</ul>
+
+<h3>Lenker</h3>
+<a class="knapper" id="valgt" href="#">Sommer</a><a
+        class="knapper" href="#">Sol</a><a
+        class="knapper" href="#">Sjø</a><a
+        class="knapper" href="#">Bading</a>
+</body>
+</html>
