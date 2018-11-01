@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <style>
+        body{
+            font-family: Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .beholder{
+            display: flex;
+            flex-direction: row;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 150px;
+        }
+
+        nav a{
+            background: #0DD936;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav > a:hover{
+            background-color: #016400;
+        }
+
+        main{
+            height: 400px;
+            flex-grow: 1;
+            background-color: #00aced;
+        }
+
+        footer{
+            height: 100px;
+            background-color: #0DD936;
+        }
+
+        #tom{
+            flex-grow: 1;
+            background-color: #0DD936;
+        }
+
+    </style>
+</head>
+<body>
+<div class="beholder">
+    <nav>
+        <a href="">Reisemål</a>
+        <a href="">Transport</a>
+        <a href="">Cruise</a>
+        <div id="tom"></div>
+        <a href="">Hurtigruta</a>
+    </nav>
+    <main>
+        <a href="../index.html">Tilbake...</a><br>
+        <h2>Flexbox med vertikal navbar</h2>
+        <ul>
+            <li>Her bruker vi 2 flexboxer</li>
+            <ol>
+                <li>nav-main: for å få de etterhverandre. Noter at main har flex-grow: 1</li>
+                <li>nav: For å få navbaren vertikal. Merk siste knapp som kommer sist, gjennom at det er lagt til en tom div som vokser med høyden.</li>
+            </ol>
+        </ul>
+    </main>
+</div>
+<footer>
+</footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <style>
+        body{
+            font-family: Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+        }
+
+        nav > a{
+            background: #0DD936;
+            padding: 10px;
+            text-decoration: none;
+            flex-basis: 150px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav > a:hover{
+            background-color: #016400;
+        }
+
+        main{
+            height: 400px;
+            background-color: #00aced;
+        }
+
+        footer{
+            height: 100px;
+            background-color: #0DD936;
+        }
+
+        #første{
+            flex-grow: 0;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <a href="" id="første">Reisemål</a>
+    <a href="">Transport</a>
+    <a href="">Cruise</a>
+    <a href="">Hurtigruta</a>
+</nav>
+<main>
+<a href="../index.html">Tilbake...</a><br>
+<h2>Flexbox med horrisontal navbar</h2>
+    <ul>
+        <li>Merk at alle knappene vokser med siden</li>
+        <li>Merk at første knappen ikke vokser med siden</li>
+    </ul>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>
