@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Norges flagg</title>
+  <style>
+    .flagg {
+      display: grid;
+      width: 75vw;
+      height: 44vw;
+      margin: 0 auto;
+      grid-template-columns: 6fr 1fr 2fr 1fr 12fr;
+      grid-template-rows: 6fr 1fr 2fr 1fr 6fr;
+      background-color: #ED2939;
+      border: solid 2px black;
+    }
+
+    #hvit1{
+      background-color: #FFFFFF;
+      grid-column: 2/5;
+      grid-row: 1/6;
+    }
+
+    #hvit2{
+      background-color: #FFFFFF;
+      grid-row: 2/5;
+      grid-column: 1/6;
+    }
+
+    #blå1{
+      background-color: #002664;
+      grid-column: 3/4;
+      grid-row: 1/6;
+    }
+
+    #blå2{
+      background-color: #002664;
+      grid-row: 3/4;
+      grid-column: 1/6;
+    }
+
+  </style>
+</head>
+<body>
+<a href="../index.html">Tilbake...</a>
+<div class="flagg">
+  <div id="hvit1"></div>
+  <div id="hvit2"></div>
+  <div id="blå1"></div>
+  <div id="blå2"></div>
+</div>
+</body>
+</html>

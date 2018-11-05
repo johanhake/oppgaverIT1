@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sjakk</title>
+  <style>
+    * {
+      font-size: 3.5vw;
+    }
+
+    #brett {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      width: 40vw;
+      height: 40vw;
+    }
+
+    #brett div:nth-child(-2n+8),
+    #brett div:nth-child(8) ~ div:nth-child(-2n+15),
+    #brett div:nth-child(16) ~ div:nth-child(-2n+24),
+    #brett div:nth-child(24) ~ div:nth-child(-2n+31),
+    #brett div:nth-child(32) ~ div:nth-child(-2n+40),
+    #brett div:nth-child(40) ~ div:nth-child(-2n+47),
+    #brett div:nth-child(48) ~ div:nth-child(-2n+56),
+    #brett div:nth-child(56) ~ div:nth-child(-2n+63) {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+<a href="../index.html">Tilbake...</a>
+<div id="brett">
+  <div>&#9814;</div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+</body>
+</html>

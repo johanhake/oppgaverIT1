@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sjakk</title>
+  <style>
+    #brett{
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(7, 1fr);
+      width: 40vw;
+      height: 40vw;
+    }
+
+    div div:nth-child(odd) {
+      background-color: black;
+    }
+
+  </style>
+</head>
+<body>
+<a href="../index.html">Tilbake...</a>
+<div id="brett">
+  <script>
+    var brett = document.getElementById("brett");
+    for (var i=0; i<64; i++) {
+      brett.appendChild(document.createElement("div"));
+    }
+  </script>
+</div>
+</body>
+</html>
