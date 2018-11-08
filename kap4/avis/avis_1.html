@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avis</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #e9e9e9;
+      font-family: sans-serif;
+    }
+
+    #container {
+      width: 75vw;
+      margin: 0 auto;
+    }
+
+    main {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 5px;
+      grid-row-gap: 5px;
+      min-width: 500px;
+      max-width: 1000px;
+    }
+
+    main > article {
+      background-color: white;
+      border:  solid 1px black;
+    }
+
+    article a {
+      text-decoration: none;
+      color: black;
+    }
+
+    article a:hover {
+      text-decoration: underline;
+    }
+
+    article h1, article p{
+      margin-top: 10px;
+    }
+
+    article a img {
+      width: 100%;
+    }
+    .kol1 {grid-column: span 1;}
+    .kol2 {grid-column: span 2;}
+    .kol3 {grid-column: span 3;}
+    .kol4 {grid-column: span 4;}
+    .kol5 {grid-column: span 5;}
+    .kol6 {grid-column: span 6;}
+    .kol12 {grid-column: span 12;}
+  </style>
+</head>
+<body>
+<div id="container">
+<header>
+  <nav>
+    <a href="">Hjem</a>
+    <a href="">Nyheter</a>
+    <a href="">Kultur</a>
+    <a href="">Distrikt</a>
+  </nav>
+</header>
+<main>
+  <article class="kol12">
+    <a href="">
+      <img src="bilder/sol-w850.jpg" alt="">
+      <h1>Kan ikke love!</h1>
+    </a>
+  </article>
+  <article class="kol6">
+    <a href="">
+      <img src="bilder/eksamen-h177.jpg" alt="">
+      <h1>Løper fra eksamen!</h1>
+      <p>Ikke glem å trene før eksamen</p>
+    </a>
+  </article>
+  <article class="kol3">
+    
+  </article>
+  <article class="kol1"> Grid 4</article>
+  <article class="kol6"> Grid 5</article>
+  <article class="kol4"> Grid 6</article>
+  <article class="kol2"> Grid 7</article>
+</main>
+</div>
+</body>
+</html>
