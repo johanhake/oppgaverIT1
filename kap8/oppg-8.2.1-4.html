@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 8.1.1-2</title>
+    <style>
+        body{
+            font-family: Verdana, sans-serif;
+        }
+
+        img{
+            display: block;
+        }
+
+        li{
+            margin-bottom: 1em;
+        }
+
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA73Mwnu0M2T1X1GoOegpjUa6oMNN0ZWgM",
+            authDomain: "bokhylle-50da5.firebaseapp.com",
+            databaseURL: "https://bokhylle-50da5.firebaseio.com",
+            projectId: "bokhylle-50da5",
+            storageBucket: "",
+            messagingSenderId: "400685492245"
+        };
+        firebase.initializeApp(config);
+    </script></head>
+<body>
+<header>
+<a href="../index.html">Tilbake...</a>
+    <p>Dette er en besvarelse av oppgaver 2 fra <a href="https://paper.dropbox.com/doc/Introduksjon-til-Firebase--AXVcfw2HqPu73ruOAtzI8LdfAg-Aan89MfjucUlsRPWvq4Ht">dropbox paper om Firebase</a></p>
+</header>
+<main>
+    <h3>Oppgaver 8.2</h3>
+<ol>
+    <li>En hendelse er noe som blir trigget fra en HTML side som man kan koble JavaScript. Eksempel er hendelsen for at en knapp blir klikket, eller verdien til et input-felt blir endret. </li>
+    <ol type="a">
+        <li>Hendelsen som brukes for å sende inn et skjema er <code>"submit"</code></li>
+        <li>Andre hendelser som kan brukes er f eks: <code>"click"</code>, <code>"change"</code></li>
+    </ol>
+    <li>En lytterfunksjon er en JavaScript funksjon som man kobler til en hendelse. Når hendelsen fyres av fra HTML-siden vil ren registrert lytterfunksjon kjøres.</li>
+    <ol type="a">
+        <li><code>event</code> er et objekt som sendes av HTML-siden til lytterfunksjon. Avhengig av hvilken hendelse det er kan man bruke dette objektet til ulike ting. F eks brukes vi <code>event</code> til submit hendelsen til å IKKE lade nettsiden på nytt når et skjema blir sendt inn. </li>
+    </ol>
+    <li>Se koden.</li>
+    <li>Hvis vi har lytterfunksjonen <code>function leggTilBok(evet)</code> kan denne kobles til hendelsen <code>submit</code> på tre ulike måter.
+    <ol>
+        <li>Gjennom attributtet "onHendelsesnavn" i HTML-elementet. F eks: <code>&ltform onsubmit="leggTilBok(event)"&gt</code></li>
+        <li>Gjennom egenskapen "onHendelsesnavn" til HTML-objektet i JavaScript. F eks: <code>skjema.onsubmit = leggTilBok;</code></li>
+        <li>Gjennom funksjonen funksjonen addEventListener på HTML-objektet i JavaScript. F eks: <code>addEventListener("submit", leggTilbok)</code></li>
+    </ol>
+    </li>
+
+</ol>
+    <section>
+        <form onsubmit="leggTilBok(event)">
+            <input id="inpTittel" type="text" placeholder="tittel" required >
+            <input id="inpForfatter" type="text" placeholder="forfatter" required >
+            <input id="inpForlag" type="text" placeholder="forlag" required >
+            <input id="inpISBN" type="text" placeholder="ISBN" required >
+            <button type="submit">Send inn</button>
+        </form>
+    </section>
+</main>
+
+<script>
+    // Henter HTML-objekter fra DOM
+    let skjema = document.querySelector("form");
+    let inpTittel = document.querySelector("#inpTittel");
+    let inpForfatter = document.querySelector("#inpForfatter");
+    let inpForlag = document.querySelector("#inpForlag");
+    let inpISBN = document.querySelector("#inpISBN");
+
+    // Lager en bøker database
+    let database = firebase.database();
+    let bokerMedGittPrimarnokkel = database.ref("bøkerMedGittPrimærnøkkel");
+
+    // Sletter bøker som er lagt inn der fra før
+    bokerMedGittPrimarnokkel.remove();
+
+    // Lytterfunksjon for å registrere
+    function leggTilBok(event){
+        // Forhindrer at en ny nettside blir lastet
+        event.preventDefault();
+
+        // Lager en ny bok med ISBN nummeret som primærnøkkel
+        let nyBok = bokerMedGittPrimarnokkel.child(inpISBN.value);
+
+        // Henter ut verdier fra skjemaet og legger de til et
+        // objekt som så blir lagt til den nye boken som data.
+        nyBok.set({
+            tittel: inpTittel.value,
+            forfatter: inpForfatter.value,
+            forlag: inpForlag.value
+        });
+
+        // Sletter data i feltene
+        skjema.reset();
+
+    }
+
+</script>
+</body>
+</html>

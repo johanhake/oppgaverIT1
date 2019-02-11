@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 8.1.1-2</title>
+    <style>
+        body{
+            font-family: Verdana, sans-serif;
+        }
+        img{
+            display: block;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA73Mwnu0M2T1X1GoOegpjUa6oMNN0ZWgM",
+            authDomain: "bokhylle-50da5.firebaseapp.com",
+            databaseURL: "https://bokhylle-50da5.firebaseio.com",
+            projectId: "bokhylle-50da5",
+            storageBucket: "",
+            messagingSenderId: "400685492245"
+        };
+        firebase.initializeApp(config);
+    </script></head>
+<body>
+<a href="../index.html">Tilbake...</a>
+<header>
+    <h3>Oppgaver 8.1.1-2</h3>
+    <p>Dette er en besvarelse av oppgaver 1 fra <a href="https://paper.dropbox.com/doc/Introduksjon-til-Firebase--AXVcfw2HqPu73ruOAtzI8LdfAg-Aan89MfjucUlsRPWvq4Ht">dropbox paper om Firebase</a></p>
+<p>Merk at det ikke er noen som vises på denne siden. For å se hva som skjer i JavaSCript må du se på kildekoden eller gå til
+    <a href="https://github.com/johanhake/oppgaverIT1">github-repot</a> </p></header>
+<p>Koden resulterer i følgende database på firebase
+    <img src="bilder/bokerFirebase.png" alt=""></p>
+
+<script>
+    // Lager en bøker database
+    let database = firebase.database();
+    let bokerUtenGittPrimarnokkel = database.ref("bøkerUtenGittPrimærnøkkel");
+    let bokerMedGittPrimarnokkel = database.ref("bøkerMedGittPrimærnøkkel");
+
+    // Sletter bøker som er lagt inn der fra før
+    bokerUtenGittPrimarnokkel.remove();
+    bokerMedGittPrimarnokkel.remove();
+
+    // Legger inn bøker i databasen
+    bokerUtenGittPrimarnokkel.push({
+            tittel: "Ulysses",
+            forfatter: "James Joyce",
+            utgitt: 1922,
+            forlag: "Cappelen Damm",
+            ISBN: 9788202185114
+        });
+
+    bokerUtenGittPrimarnokkel.push({
+            tittel: "Sommer",
+            forfatter: "J.M. Coetzee",
+            utgitt: 2010,
+            forlag: "Cappelen Damm",
+            ISBN: 978802325145
+        });
+
+    bokerUtenGittPrimarnokkel.push({
+            tittel: "Hjulskift",
+            forfatter: "Vigdis Hjorth",
+            utgitt: 2007,
+            forlag: "Cappelen Damm",
+            ISBN: 9788202309596
+        });
+
+
+    // Legger inn bøker hvor vi bestemmer primærnøkkelen
+    let bok = bokerMedGittPrimarnokkel.child("9788202185114");
+    bok.set({
+        tittel: "Ulysses",
+        forfatter: "James Joyce",
+        utgitt: 1922,
+        forlag: "Cappelen Damm"
+    });
+
+    bok = bokerMedGittPrimarnokkel.child("978802325145");
+    bok.set({
+        tittel: "Sommer",
+        forfatter: "J.M. Coetzee",
+        utgitt: 2010,
+        forlag: "Cappelen Damm"
+    });
+
+    bok = bokerMedGittPrimarnokkel.child("9788202309596");
+    bok.set({
+        tittel: "Hjulskift",
+        forfatter: "Vigdis Hjorth",
+        utgitt: 2007,
+        forlag: "Cappelen Damm"
+    });
+</script>
+</body>
+</html>
