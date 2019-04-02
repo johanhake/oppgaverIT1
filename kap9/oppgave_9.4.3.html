@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 9.4.3</title>
+    <style>
+        body {
+            height: 100vh;
+            position: relative;
+        }
+
+        @keyframes snurr {
+            0% {
+                left: 0;
+                transform: rotate(0turn) scale(1,1);
+            }
+            96% {
+                left: 628px;
+                transform: rotate(2turn) scale(1,1);
+            }
+            100% {
+                left: 628px;
+                transform: rotate(2turn) scale(0.1,1.5);
+            }
+        }
+
+        #tennisBall {
+            width: 100px;
+            top: 30px;
+            left: 0;
+            position: absolute;
+            animation: snurr 2s cubic-bezier(.69,.01,.91,.6) infinite alternate;
+        }
+    </style>
+</head>
+<body>
+<img id="tennisBall" src="bilder/tennis-ball.svg" alt="">
+</body>
+</html>

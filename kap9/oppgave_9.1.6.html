@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 9.2.1</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        img {
+            width: 4.5vw;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    var body = document.querySelector("body");
+
+    // Få ned bilden litt på siden
+    var y0 = 400;
+
+    // Løkke for å legge til img-element
+    var antall = 20;
+
+    // Setter den vertikale utgangsfarten
+    var v0 = 80;
+
+    // Setter den vertikale akselerasjonen slik at den vertikale farten blir 0 halvveis
+    var aks = -2*v0/antall;
+    for (var i=0; i<=antall; i++){
+
+        // Finn den vertikale posisjonen for
+        var y = y0 - (v0*i + 0.5*aks*i*i);
+        console.log("y:", i, y, aks);
+        body.innerHTML += `<img style="transform:
+                                            translateY(${y}px)
+                                            rotate(${i/antall*360}deg)
+                                            " src="bilder/elg.svg">`;
+    }
+</script>
+</body>
+</html>

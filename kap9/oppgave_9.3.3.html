@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 9.3.3</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            flex: 1;
+            height: 150px;
+            transition-duration: 0.25s;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            opacity: 0.4;
+        }
+        #katt {background-image: url("bilder/katt.svg")}
+        #drage{background-image: url("bilder/drage.svg")}
+        #gnu {background-image: url("bilder/gnu.svg")}
+        #gris {background-image: url("bilder/gris.svg")}
+        #hest {background-image: url("bilder/hest.svg")}
+        #lamm {background-image: url("bilder/lamm.svg")}
+        #sjiraf {background-image: url("bilder/sjiraf.svg")}
+        #skildpadde {background-image: url("bilder/skildpadde.svg")}
+
+        div:active {
+            flex: 4;
+            transform: scale(3) rotate(1turn);
+            opacity: 1;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<div id="katt"></div>
+<div id="drage"></div>
+<div id="gnu"></div>
+<div id="gris"></div>
+<div id="hest"></div>
+<div id="lamm"></div>
+<div id="sjiraf"></div>
+<div id="skildpadde"></div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 9.4.5</title>
+    <style>
+        body {
+            height: 100vh;
+            position: relative;
+        }
+
+        @keyframes snurr {
+            0% {
+                left: 0;
+                transform: rotate(0turn) scale(1,1);
+            }
+            96% {
+                left: 628px;
+                transform: rotate(2turn) scale(1,1);
+            }
+            100% {
+                left: 628px;
+                transform: rotate(2turn) scale(0.1,1.5);
+            }
+        }
+
+        @keyframes bang {
+            0% {
+                transform: scale(0) rotate(0turn);
+            }
+            96% {
+                transform: scale(0) rotate(0turn)
+            }
+            100% {
+                transform: scale(1) rotate(0.1turn);
+            }
+        }
+
+        #tennisBall {
+            width: 100px;
+            top: 30px;
+            position: absolute;
+            animation:  2s cubic-bezier(.69,.01,.91,.6) infinite alternate;
+        }
+
+        #bang {
+            width: 100px;
+            left:665px;
+            top: 15px;
+            position: absolute;
+            transform: scale(0) rotate(0turn);
+            animation: 2s linear infinite alternate;
+        }
+
+        #btnPause{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<button id="btnStartStop" onclick="startStop()">Start</button>
+<button id="btnPause" onclick="pause()">Pause</button>
+<br>
+<img id="tennisBall" src="bilder/tennis-ball.svg" alt="">
+<img id="bang" src="bilder/bang.png" alt="">
+<script>
+    var tennisBall = document.getElementById("tennisBall");
+    var bang = document.getElementById("bang");
+    var btnStartStop = document.getElementById("btnStartStop");
+    var btnPause = document.getElementById("btnPause");
+
+    // Start og stop lytterfunksjon
+    function startStop(){
+        if (tennisBall.style.animationName === ""){
+            tennisBall.style.animationName = "snurr";
+            tennisBall.style.animationPlayState = "running";
+            bang.style.animationName = "bang";
+            bang.style.animationPlayState = "running";
+            btnStartStop.innerHTML = "Stop";
+            btnPause.style.display = "inline";
+            btnPause.innerHTML = "Pause";
+        } else {
+            tennisBall.style.animationName = "";
+            tennisBall.style.animationPlayState = "stopped";
+            bang.style.animationName = "";
+            bang.style.animationPlayState = "stopped";
+            btnStartStop.innerHTML = "Start";
+            btnPause.style.display = "none";
+            btnPause.innerHTML = "Pause";
+        }
+    }
+
+    // Start og pause lytterfunksjon
+    function pause(){
+        if (tennisBall.style.animationPlayState === "running") {
+            tennisBall.style.animationPlayState = "paused";
+            bang.style.animationPlayState = "paused";
+            btnPause.innerHTML = "Start";
+        } else {
+            tennisBall.style.animationPlayState = "running";
+            bang.style.animationPlayState = "running";
+            btnPause.innerHTML = "Pause";
+        }
+    }
+</script>
+</body>
+</html>
