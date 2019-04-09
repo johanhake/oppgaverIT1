@@ -10,58 +10,26 @@
             position: relative;
         }
 
-        @keyframes rundt1 {
+        @keyframes rundt {
             0% {
-                left: 0;
-                top: 0;
+                transform: translate(0,0);
                 border-radius: 0;
             }
             25% {
-                left: calc(95vw - 100px);
-                top: 0;
+                transform: translate(calc(100vw - 100px),0);
                 border-radius: 50%;
             }
             50% {
-                left: calc(95vw - 100px);
-                top: calc(95vh - 100px);
+                transform: translate(calc(100vw - 100px),
+                calc(100vh - 100px));
                 border-radius: 0;
             }
             75% {
-                left: 0;
-                top: calc(95vh - 100px);
                 border-radius: 50%;
+                transform: translate(0, calc(100vh - 100px));
             }
             100% {
-                left: 0;
-                top: 0;
-                border-radius: 0;
-            }
-        }
-
-        @keyframes rundt2 {
-            0% {
-                left: calc(95vw - 100px);
-                top: 0;
-                border-radius: 0;
-            }
-            25% {
-                left: 0;
-                top: 0;
-                border-radius: 50%;
-            }
-            50% {
-                left: 0;
-                top: calc(95vh - 100px);
-                border-radius: 0;
-            }
-            75% {
-                left: calc(95vw - 100px);
-                top: calc(95vh - 100px);
-                border-radius: 50%;
-            }
-            100% {
-                left: calc(95vw - 100px);
-                top: 0;
+                transform: translate(0,0);
                 border-radius: 0;
             }
         }
@@ -74,12 +42,12 @@
 
         #kvadrat1 {
             background-color: #0DD936;
-            animation: rundt1 10s infinite;
+            animation: rundt 10s infinite linear;
         }
 
         #kvadrat2 {
             background-color: #0000ff;
-            animation: rundt2 10s infinite;
+            animation: rundt reverse 10s infinite linear;
         }
 
     </style>
