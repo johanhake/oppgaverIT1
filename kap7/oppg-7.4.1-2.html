@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <title>Oppgave 7.4.1-2</title>
+</head>
+<body>
+    <a href="../index.html">Tilbake...</a><br>
+<h1>Oppgaver 7.4</h1>
+<ol>
+    <li>Primærnøkler brukes til unikt å identifisere data (objekt) i en database</li>
+    <li>
+        <ol type="a">
+            <li>elever på en skole: personnummer</li>
+            <li>fritidsbåter: registreringssnummer</li>
+            <li>planter: latinske navnet</li>
+            <li>kontaktene dine: telefonnummer</li>
+            <li>stjerner på himmelen: vitenskaplig navn på stjernen</li>
+        </ol>
+    </li>
+    <li>En kandidatnøkkel er et egenskapsnavn som KAN brukes til å identifisere et objekt</li>
+    <li>En fremmednøkkel er en verdi som er en primærnøkkel i en annen database. Fremmednøkkelen knyter da de to databasene sammen.</li>
+    <li>Normalisering er å redusere dobbeltlagring</li>
+    <li>
+        <pre>
+{
+    "brukere":{
+        "erlend": {
+            "poeng": 45,
+            "farge": "brun"
+        },
+        "helene": {
+            "poeng": 57,
+            "farge": "søll"
+        },
+        "felix": {
+            "poeng": 34,
+            "farge": "gul"
+        },
+    },
+            
+    "meldinger":{
+        "1":{
+            "fra": "erlend",
+            "til": "helene",
+            "melding": "Jeg vinner!",
+        },
+        "2":{
+            "fra": "erlend",
+            "til": "felix",
+            "melding": "Det er jeg som vinner!"
+        },
+        "3":{
+            "fra": "erlend",
+            "til": "helene",
+            "melding": "Neeeeeei, du vant!!!"
+        }
+    }
+}
+        </pre>
+    </li>
+    <li>
+        <pre>
+{
+    "3":{
+        "navn": "Sharknado",
+        "regissør": "Bob Stern",
+        "studio": "Universal Studios",
+        "år": 2004
+    },
+    
+    "5":{
+        "navn": "Star Wars",
+        "regissør": "Steven Spielberg",
+        "studio": "Paramount",
+        "år": 2004
+    },
+
+    "8":{
+        "navn": "E.T.",
+        "regissør": "Steven Spielberg",
+        "studio": "Paramount",
+        "år": 2009
+    }
+}                
+        </pre>
+    </li>
+
+</ol>
+
+</body>
+</html>
